@@ -13,7 +13,7 @@ public class ObserverEarningsTest {
 		ObserverEarnings e = new ObserverEarnings();
 		e.update(new PizzaBase());
 		e.update(new PizzaBaseGlutenFree());
-		assertThat(ObserverEarnings.getEarnings()).isEqualTo(9);
+		assertThat(e.getEarnings()).isEqualTo(9);
 	}
 
 }

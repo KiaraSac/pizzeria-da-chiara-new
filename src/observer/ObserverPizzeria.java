@@ -1,6 +1,5 @@
 package observer;
 
-import factory.PizzaBaseFactory;
 import kitchen.Pizza;
 
 public interface ObserverPizzeria {

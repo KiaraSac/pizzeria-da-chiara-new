@@ -12,6 +12,17 @@ import observer.ObserverPizzeria;
 public class PizzaFactoryTest {
 
 	@Test
+	public void testNotifyObservers() {
+		PizzaBaseFactory publisher = new PizzaBaseFactory();
+		ObserverEarnings observer = new ObserverEarnings();
+		
+		publisher.observers.add(observer);
+		publisher.create();
+		assertThat(observer.getEarnings()).isEqualTo(4.5);
+		
+	}
+	
+	@Test
 	public void testAddObserver() {
 		PizzaFactory f = new PizzaBaseFactory();
 		ObserverPizzeria o = new ObserverEarnings();
