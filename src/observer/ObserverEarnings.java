@@ -1,21 +1,21 @@
 package observer;
 
+import java.util.List;
 import kitchen.Pizza;
 
 public class ObserverEarnings implements ObserverPizzeria {
 
-	private double earnings = 0;
+	private static double earnings = 0;
 
 	public double getEarnings() {
 		return earnings;
 	}
 
 	@Override
-	public void update(Pizza pizza) {
-		this.earnings+=pizza.getPrice();
+	public void update(List<Pizza> list) {
+		ObserverEarnings.earnings += list.stream()
+										.mapToDouble(p -> p.getPrice())
+										.sum();
 	}
-	
-	
-
 
 }

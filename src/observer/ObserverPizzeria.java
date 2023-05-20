@@ -1,7 +1,10 @@
 package observer;
 
+import java.util.List;
 import kitchen.Pizza;
 
 public interface ObserverPizzeria {
-	public void update(Pizza pizza);
+
+	public void update(List<Pizza> item);
+
 }

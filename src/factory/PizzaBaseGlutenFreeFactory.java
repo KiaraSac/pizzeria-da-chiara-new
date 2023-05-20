@@ -4,11 +4,11 @@ import kitchen.*;
 import strategy.StrategyRecipe;
 
 public class PizzaBaseGlutenFreeFactory extends PizzaFactory {
-	
+
 	PizzaBaseGlutenFreeFactory(StrategyRecipe strategyRecipe) {
 		super(strategyRecipe);
 	}
-	
+
 	PizzaBaseGlutenFreeFactory() {
 		super();
 	}
@@ -16,9 +16,8 @@ public class PizzaBaseGlutenFreeFactory extends PizzaFactory {
 	@Override
 	public Pizza create() {
 		Pizza pizza = new PizzaBaseGlutenFree();
-		if (strategyRecipe != null)
-			pizza=strategyRecipe.create(pizza);
-		notifyObservers(pizza);
+		if (super.getStrategyRecipe() != null)
+			pizza = super.getStrategyRecipe().create(pizza);
 		return pizza;
 	}
 

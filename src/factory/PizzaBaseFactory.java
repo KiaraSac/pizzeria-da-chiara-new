@@ -6,10 +6,10 @@ import strategy.StrategyRecipe;
 
 public class PizzaBaseFactory extends PizzaFactory {
 
-	PizzaBaseFactory(StrategyRecipe strategyRecipe) {
+	public PizzaBaseFactory(StrategyRecipe strategyRecipe) {
 		super(strategyRecipe);
 	}
-	
+
 	public PizzaBaseFactory() {
 		super();
 	}
@@ -17,9 +17,8 @@ public class PizzaBaseFactory extends PizzaFactory {
 	@Override
 	public Pizza create() {
 		Pizza pizza = new PizzaBase();
-		if (strategyRecipe != null)
-			pizza= strategyRecipe.create(pizza);
-		notifyObservers(pizza);	
+		if (super.getStrategyRecipe() != null)
+			pizza = super.getStrategyRecipe().create(pizza);
 		return pizza;
 	}
 

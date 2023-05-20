@@ -1,6 +1,7 @@
 package kitchen;
 
 public class DecoratorTomato extends PizzaDecorator {
+
 	private double additionalPrice = 1.5;
 
 	public DecoratorTomato(Pizza p) {
@@ -9,12 +10,12 @@ public class DecoratorTomato extends PizzaDecorator {
 
 	@Override
 	public String getDescription() {
-		return super.getDescription()+", Tomato Souce";
+		return super.getDescription() + ", Tomato Souce";
 	}
 
 	@Override
 	public double getPrice() {
-		return super.getPrice()+additionalPrice;
+		return super.getPrice() + additionalPrice;
 	}
 
 }

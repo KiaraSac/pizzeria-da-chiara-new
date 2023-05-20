@@ -1,5 +1,7 @@
 package factory;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 import org.junit.Test;
 
 import kitchen.Pizza;
@@ -7,9 +9,6 @@ import kitchen.PizzaBaseGlutenFree;
 import kitchen.PizzaDecorator;
 import strategy.StrategyMargherita;
 import strategy.StrategyMushrooms;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.*;
 
 public class PizzaBaseGlutenFreeFactoryTest {
 
